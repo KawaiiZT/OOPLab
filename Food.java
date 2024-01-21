@@ -2,22 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package labs06;
 
-/**
- *
- * @author KoonD
- */
-public abstract class Food {
-    protected String name;
+public class Food {
+    private static final int energy = 10;
+    private static double price = 50;
     
-    public Food(){
-        this.name = "";
+    public static void setPrice(double price){
+        if (Food.price > price){
+            Food.price = price;
+        }else{
+            System.out.println("Cannot update the food price.");
+        }
     }
-    public void setName(String name){
-        this.name = name;
+    public static double getPrice(){
+        return price;
     }
-    public String getName(){
-        return name;
+    public static int getEnergy(){
+        return energy;
     }
-    public abstract int getPower();
 }
